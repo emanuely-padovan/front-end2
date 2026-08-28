@@ -1,4 +1,0 @@
-Nome: Emanuely Macedo Padovan
-
-Mudança: A estrutura para a construção de um arquivo HTML muda bastante entre os dois. O Bootstrap oferece utilities e componentes prontos, fazendo com que o HTML fique mais enxuto. Já o Tailwind utiliza diversas classes diretamente no elemento HTML, deixando os componentes com uma quantidade maior de classes. que não "poluem" o código. Enquanto o Tailwind necessita de arquivos diversos para o seu funcionamento e uma grande estensão no nome do componentes. Além disso, o Tailwind precisa de arquivos adicionais.
-Semelhança: Os dois permitem construir o mesmo layout e aplicar espaçamento, cores, sombras e outros estilos.
