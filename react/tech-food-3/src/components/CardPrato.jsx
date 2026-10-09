@@ -4,11 +4,13 @@ function CardPrato({nome, preco, descricao, categoria}) {
         currency: "BRL",
     });
 
+    const categoriaFormatada = categoria === "Sobremesa" ? `🍰${categoria}` : categoria;
+
     return (
         <article className="card-prato">
-            <span className="categoria">{categoria}</span>
             <h2>{nome}</h2>
             <p className="descricao">{descricao}</p>
+            <span className="categoria">{categoriaFormatada}</span>
             <p className="preco">{precoFormatado}</p>
         </article>
     );

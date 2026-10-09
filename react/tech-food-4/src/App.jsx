@@ -14,9 +14,11 @@ function App() {
   return (
     <main className="app">
       <Header/>
+      <h2>Cardápio com {cardapio.length} itens</h2>
       <section className="cardapio">
         {cardapio.map((prato) => (
           <CardPrato key={prato.id} nome={prato.nome} preco={prato.preco} descricao={prato.descricao} categoria={prato.categoria}
+          // key (indicação de item único)
           />
         ))}
       </section>
