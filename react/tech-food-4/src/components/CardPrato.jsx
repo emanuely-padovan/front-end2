@@ -12,6 +12,7 @@ function CardPrato({nome, preco, descricao, categoria}) {
             <p className="descricao">{descricao}</p>
             <span className="categoria">{categoriaFormatada}</span>
             <p className="preco">{precoFormatado}</p>
+            <button type="button" className="btn-adicionar" onClick={adicionar}>Adicionar ao pedido</button>
         </article>
     );
 }
