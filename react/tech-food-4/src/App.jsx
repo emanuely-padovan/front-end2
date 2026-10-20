@@ -1,22 +1,29 @@
-import "./App.css";
-import {cardapio} from "./data/cardapio"
+import {useState} from "react";
 import CardPrato from "./components/CardPrato";
 import Header from "./components/Header";
-import Footer from "./components/Rodape";
+import {cardapio} from "./data/cardapio";
+import "./App.css";
 
 function App() {
+  const [totalItens, setTotalItens] = useState(0);
+  function adicionarAoPedido(quantidade) {
+    setTotalItens(totalItens + quantidade);
+  }; 
+
   return (
     <main className="app">
       <Header/>
-      <h2>Cardápio com {cardapio.length} itens</h2>
       <section className="cardapio">
         {cardapio.map((prato) => (
-          <CardPrato key={prato.id} nome={prato.nome} preco={prato.preco} descricao={prato.descricao} categoria={prato.categoria}
-          // key (indicação de item único)
+          <CardPrato
+            key={prato.id}
+            nome={prato.nome}
+            preco={prato.preco}
+            categoria={prato.categoria}
+            onAdicionar={adicionarAoPedido}
           />
         ))}
       </section>
-      <Footer/>
     </main>
   );
 }

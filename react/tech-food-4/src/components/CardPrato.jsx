@@ -1,18 +1,38 @@
-function CardPrato({nome, preco, descricao, categoria, quantidade}) {
-    const precoFormatado = preco.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
+import {useState} from "react";
+
+function CardPrato({nome, preco, categoria}) {
+    const [quantidade, setQuantidade] = useState(1);
+
+    const precoFormatado = preco.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
     });
 
-    const categoriaFormatada = categoria === "Sobremesa" ? `🍰${categoria}` : categoria;
+    function diminuir() {
+        if (quantidade > 1) {
+            setQuantidade(quantidade - 1);
+        }
+    };
+
+    function aumentar() {
+        setQuantidade(quantidade + 1);
+    };
+
+    function adicionarAoCarrinho() {
+        console.log(`Adicionou ${nome} ao carrinho!`)
+    };
 
     return (
         <article className="card-prato">
+            <span className="categoria">{categoria}</span>
             <h2>{nome}</h2>
-            <p className="descricao">{descricao}</p>
-            <span className="categoria">{categoriaFormatada}</span>
             <p className="preco">{precoFormatado}</p>
-            <button type="button" className="btn-adicionar" onClick={adicionar}>Adicionar ao pedido</button>
+            <div className="quantidade">
+                <button className="btn diminuir" onClick={diminuir}>-</button>
+                <span className="numero">{quantidade}</span>
+                <button className="btn aumentar" onClick={aumentar}>+</button>
+            </div>
+            <button type='button' className="btn-adicionar" onClick={adicionarAoCarrinho}>Adicionar ao Carrinho</button>
         </article>
     );
 }
