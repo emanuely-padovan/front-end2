@@ -41,6 +41,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  color: #222;
 }
 .card-prato .categoria {
   font-size: 0.72rem;
@@ -52,6 +53,7 @@
 .card-prato h2 {
   font-size: 1.15rem;
   margin: 0;
+  color: #111;
 }
 .card-prato .preco {
   font-weight: 700;
@@ -64,7 +66,6 @@
   margin: 0;
 }
 
-/* Seletor de quantidade  −  1  + */
 .quantidade {
   display: flex;
   align-items: center;
@@ -110,4 +111,26 @@
   margin-top: 40px;
   color: #999;
   font-size: 0.85rem;
+}
+
+.quantidade button:disabled,
+.btn-secundario:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.quantidade .limite {
+  color: #e4002b;
+  font-size: 0.75rem;
+}
+.btn-curtir {
+  border: 1px solid #f3c1c9;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fff5f6;
+  color: #b80023;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-curtir:hover {
+  background: #ffe6ea;
 }
